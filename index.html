@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brahmic Abugidas Reference</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- 頂部標題列 + 下拉選單 -->
+  <header>
+    <h1>Brahmic Abugidas</h1>
+    <div class="script-selector">
+      <label for="scriptSelect">選擇文字系統</label>
+      <select id="scriptSelect">
+        <option value="bengali">Bengali（孟加拉文）</option>
+        <option value="devanagari">Devanagari（天城文）</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- 主體三欄佈局 -->
+  <main>
+
+    <!-- 左側：說明面板（可展開） -->
+    <aside id="infoPanel">
+      <button id="toggleInfo" aria-expanded="true">ℹ 文字系統說明</button>
+      <div id="infoContent">
+        <!-- 由 JS 動態填入 -->
+      </div>
+    </aside>
+
+    <!-- 中間：輔音表 -->
+    <section id="consonantsSection">
+      <h2>輔音 Consonants</h2>
+      <div id="consonantsGrid" class="letter-grid">
+        <!-- 由 JS 動態填入 -->
+      </div>
+    </section>
+
+    <!-- 右側：母音表 -->
+    <section id="vowelsSection">
+      <h2>母音 Vowels</h2>
+      <div id="vowelsGrid" class="letter-grid">
+        <!-- 由 JS 動態填入 -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>

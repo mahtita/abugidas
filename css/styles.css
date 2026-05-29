@@ -1,0 +1,220 @@
+/* ── Reset & Variables ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --surface2: #252836;
+  --accent: #7c6af7;
+  --accent2: #4fc3f7;
+  --text: #e8eaf0;
+  --text-muted: #8b8fa8;
+  --border: #2e3148;
+  --card-hover: #2d3250;
+  --radius: 12px;
+  --font-main: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.03em;
+}
+
+/* ── Dropdown ── */
+.script-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.script-selector label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+#scriptSelect {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.45rem 2.2rem 0.45rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237c6af7' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#scriptSelect:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124,106,247,0.3);
+}
+
+/* ── Main layout ── */
+main {
+  display: grid;
+  grid-template-columns: 260px 1fr 340px;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  flex: 1;
+  align-items: start;
+}
+
+/* ── Aside / Info Panel ── */
+aside#infoPanel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: sticky;
+  top: 72px;
+}
+
+#toggleInfo {
+  width: 100%;
+  background: var(--surface2);
+  border: none;
+  color: var(--text);
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s;
+}
+
+#toggleInfo:hover { background: var(--card-hover); }
+
+#infoContent {
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+
+#infoContent h3 {
+  color: var(--accent2);
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+/* ── Sections ── */
+section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+}
+
+section h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Letter Grid ── */
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 0.6rem;
+}
+
+/* ── Letter Card ── */
+.letter-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 0.4rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.letter-card:hover {
+  background: var(--card-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.letter-card:active { transform: scale(0.96); }
+
+.letter-char {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.letter-char img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.letter-name {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.letter-ipa {
+  font-size: 0.72rem;
+  color: var(--accent2);
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1000px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  aside#infoPanel {
+    grid-column: 1 / -1;
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  main { grid-template-columns: 1fr; }
+}
