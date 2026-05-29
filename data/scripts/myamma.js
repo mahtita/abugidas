@@ -1,5 +1,5 @@
-const bengali = {
-  name: "Bengali / বাংলা",
+const myamma = {
+  name: "Mon–Burmese script / မြန်မာမွန်အက္ခရာ",
   description: "緬文及孟文是婆羅米系文字，由左至右書寫。輔音預設帶有內在母音「অ /a/」，須以母音符號（কার kār）修改。",
   details: [
     { title: "文字類型", content: "Abugida：每個輔音預設帶有短母音，加符號修改。" },
@@ -105,4 +105,4 @@ const bengali = {
   ]
 };
 
-export default bengali;
+export default myamma;
