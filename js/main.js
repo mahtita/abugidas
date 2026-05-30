@@ -1,7 +1,10 @@
 import bengali from '../data/scripts/bengali.js';
 import myamma from '../data/scripts/myamma.js';
 
-const SCRIPTS = { bengali };
+const SCRIPTS = { 
+  bengali,
+  myamma,
+ };
 
 const select           = document.getElementById('scriptSelect');
 const infoContent      = document.getElementById('infoContent');
