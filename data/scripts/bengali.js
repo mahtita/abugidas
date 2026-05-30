@@ -84,7 +84,7 @@ const bengali = {
           { char: "ব", name: "bô",  ipa: "/bɔ/",  audio: "consonants/ba.mp3" },
           { char: "ভ", name: "bhô", ipa: "/bʱɔ/", audio: "consonants/bha.mp3" },
           { char: "ম", name: "mô",  ipa: "/mɔ/",  audio: "consonants/ma.mp3" },
-          null,
+          { char: "ৱ", name: "wô",  ipa: "/wɔ/",  audio: "consonants/wa.mp3" },
           null,
         ]
       },
