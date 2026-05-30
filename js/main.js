@@ -156,3 +156,4 @@ function makeCard(letter, scriptKey) {
 }
 
 loadScript('bengali');
+loadScript('myamma');
